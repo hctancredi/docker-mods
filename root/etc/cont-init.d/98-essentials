@@ -1,45 +1,22 @@
 #!/usr/bin/with-contenv bash
 
-PAR2_VERSION="0.8.1"
-PAR2_URL="https://github.com/Parchive/par2cmdline/releases/download/v0.8.1/par2cmdline-$PAR2_VERSION.tar.gz"
-echo "NZBGet Essentials - Installation Started"
-apk --update upgrade
-echo "Dependencies are being installed...."
-apk add --no-cache --virtual=build-dependencies \
-	make \
-	g++ \
-	ca-certificates \
+## Ubuntu
+if [ -f /usr/bin/apt ]; then
+	echo "Distribution: Ubuntu/Debian"
+	echo "LazyLibrarian Essentials - Installation Started"
+	apt-get update
+	apt-get install -y \
 	wget \
-	autoconf \
-	automake \
-	openmp \
 	git \
-	build-base
-update-ca-certificates
-apk --update upgrade
-echo "Binaries are being installed..."
-apk add --no-cache \
-    --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing \
-	ffmpeg \
-	openssl \
-	p7zip \
+	dialog \
 	unzip \
-	unrar \
-	python2
-if [ -f /usr/local/bin/par2 ]; then
-	echo "`par2 -V` is already installed"
-	echo "NZBGet Essentials - Installation Ended"
-else
-	echo "PAR2 Installation Started"
-	mkdir -p /tmp/par2
-	curl -kL ${PAR2_URL} | tar -xz -C /tmp/par2 --strip-components=1
-	cd /tmp/par2
-	aclocal
-	automake --add-missing
-	autoconf
-	./configure
-	make
-	make install
-	rm -rf /tmp/*
+	p7zip \
+	ffmpeg \
+	calibre
+	echo "LazyLibrarian Essentials - Installation Ended"
+  fi
+## Alpine
+  if [ -f /sbin/apk ]; then
+	echo "Alpine Essentials are not implemented yet...Done"
+  fi
 fi
-echo "NZBGet Essentials - Installation Ended"
