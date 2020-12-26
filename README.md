@@ -1,15 +1,15 @@
-# NZBGet Essentials
+# LazyLibrarian Essentials
 
 This mod adds a few esssential binaries to NZBGet container.
 
+calibre
 ffmpeg
-openssl
+imagemagick
 p7zip
 unzip
-unrar
-python2
-par2
+wget
+git
 
-In NZBGet docker arguments, set an environment variable `DOCKER_MODS=linuxserver/mods:nzbget-essentials`
+In LazyLibrarian docker arguments, set an environment variable `DOCKER_MODS=linuxserver/mods:lazylibrarian-essentials`
 
-If adding multiple mods, enter them in an array separated by |, such as `DOCKER_MODS=linuxserver/mods:nzbget-essentials|linuxserver/mods:nzbget-mod2`
+If adding multiple mods, enter them in an array separated by |, such as `DOCKER_MODS=linuxserver/mods:lazylibrarian-essentials|linuxserver/mods:lazylibrarian-mod2`
