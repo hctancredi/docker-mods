@@ -1,6 +1,6 @@
 # LazyLibrarian Essentials
 
-This mod adds a few esssential binaries to NZBGet container.
+This mod adds a few esssential binaries to LazyLibrarian container.
 
 calibre
 ffmpeg
