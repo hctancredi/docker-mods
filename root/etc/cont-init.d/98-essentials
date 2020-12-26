@@ -14,9 +14,8 @@ if [ -f /usr/bin/apt ]; then
 	ffmpeg \
 	calibre
 	echo "LazyLibrarian Essentials - Installation Ended"
-  fi
+fi
 ## Alpine
-  if [ -f /sbin/apk ]; then
+if [ -f /sbin/apk ]; then
 	echo "Alpine Essentials are not implemented yet...Done"
-  fi
 fi
