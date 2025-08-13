@@ -14,7 +14,7 @@ env:
   ENDPOINT: "hctancredi/docker-mods" #don't modify
   BRANCH: "nzbget"
   BASEIMAGE: "nzbget" #replace
-  MODNAME: "essentials" #replace
+  MODNAME: "nzbget" #replace
   MOD_VERSION: ${{ inputs.mod_version }} #don't modify
   MULTI_ARCH: "false" #set to false if not needed
 
