@@ -12,7 +12,7 @@ on:
 env:
   GITHUB_REPO: "hctancredi/docker-mods" #don't modify
   ENDPOINT: "hctancredi/docker-mods" #don't modify
-  BRANCH: "nzbget"
+  #BRANCH: "nzbget"
   BASEIMAGE: "nzbget" #replace
   MODNAME: "nzbget" #replace
   MOD_VERSION: ${{ inputs.mod_version }} #don't modify
