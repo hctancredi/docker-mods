@@ -12,7 +12,6 @@ on:
 env:
   GITHUB_REPO: "hctancredi/docker-mods" #don't modify
   ENDPOINT: "hctancredi/docker-mods" #don't modify
-  #BRANCH: "nzbget"
   BASEIMAGE: "nzbget" #replace
   MODNAME: "essentials" #replace
   MOD_VERSION: ${{ inputs.mod_version }} #don't modify
