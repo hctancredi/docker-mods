@@ -5,20 +5,19 @@
 # It takes advantage of the built-in init-mods-package-install init script that comes with the baseimages.
 # If using this, we need to make sure we set this init as a dependency of init-mods-package-install so this one runs first
 
-if [[ -f /sbin/apk ]]; then
-    echo "**** Phase 1 - Dependencies are being installed ****"
-    echo "libgomp" >> /mod-repo-packages-to-install.list
-	echo "tar" >> /mod-repo-packages-to-install.list
-	echo "make" >> /mod-repo-packages-to-install.list
-	echo "g++" >> /mod-repo-packages-to-install.list
-	echo "ca-certificates" >> /mod-repo-packages-to-install.list
-	echo "wget" >> /mod-repo-packages-to-install.list
-	echo "autoconf" >> /mod-repo-packages-to-install.list
-	echo "automake" >> /mod-repo-packages-to-install.list
-	echo "openmp" >> /mod-repo-packages-to-install.list
-	echo "git" >> /mod-repo-packages-to-install.list
-    echo "ffmpeg" >> /mod-repo-packages-to-install.list
-    echo "p7zip" >> /mod-repo-packages-to-install.list
-    echo "**** Phase 1 - Dependencies installed ****"
-
+if [ -f /sbin/apk ]; then
+    echo "\
+        bind-tools \
+		libgomp	\
+		tar \
+		make \
+		g++ \
+		ca-certificates \
+		wget \
+		autoconf \
+		automake \
+		openmp \
+		git \
+		ffmpeg \
+		p7zip" >> /mod-repo-packages-to-install.list
 fi
