@@ -6,6 +6,9 @@
 # If using this, we need to make sure we set this init as a dependency of init-mods-package-install so this one runs first
 
 if [ -f /sbin/apk ]; then
+echo http://dl-cdn.alpinelinux.org/alpine/edge/main > /etc/apk/repositories
+echo http://dl-cdn.alpinelinux.org/alpine/edge/community/ >> /etc/apk/repositories
+apk --update upgrade
     echo "\
         bind-tools \
 		libgomp	\
