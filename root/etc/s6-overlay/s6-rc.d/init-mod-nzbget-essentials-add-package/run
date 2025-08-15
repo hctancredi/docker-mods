@@ -9,18 +9,31 @@ if [ -f /sbin/apk ]; then
 echo http://dl-cdn.alpinelinux.org/alpine/edge/main > /etc/apk/repositories
 echo http://dl-cdn.alpinelinux.org/alpine/edge/community/ >> /etc/apk/repositories
 apk --update upgrade
-    echo "\
-        bind-tools \
-		libgomp	\
-		tar \
-		make \
-		g++ \
-		ca-certificates \
-		wget \
-		autoconf \
-		automake \
-		openmp \
-		git \
-		ffmpeg \
-		p7zip" >> /mod-repo-packages-to-install.list
+echo "Phase 1 - Dependencies are being installed...."
+apk add --no-cache --virtual=build-dependencies \
+    --repository http://dl-cdn.alpinelinux.org/alpine/edge/main \
+	tar \
+	libgomp \
+	make \
+	g++ \
+	ca-certificates \
+	wget \
+	autoconf \
+	automake \
+	openmp \
+	git \
+	build-base
+update-ca-certificates
+echo "Phase 1 - DONE"
+echo " "
+echo "Phase 2 - Binaries are being installed..."
+apk add --no-cache \
+    --repository http://dl-cdn.alpinelinux.org/alpine/edge/main \
+	ffmpeg \
+	openssl \
+	p7zip \
+	unzip \
+	unrar \
+	python3
+echo "Phase 2 - DONE"
 fi
