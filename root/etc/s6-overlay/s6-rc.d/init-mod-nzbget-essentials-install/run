@@ -10,7 +10,7 @@ if apk list --installed -q | grep par2cmdline &> /dev/null; then
     apk del --purge -q par2cmdline
 fi
 
-if [[ -e "/usr/local/bin/par2" ]] && grep -q 'par2cmdline-turbo' <<< "$(/usr/local/bin/par2 -V)"; then
+# if [[ -e "/usr/local/bin/par2" ]] && grep -q 'par2cmdline-turbo' <<< "$(/usr/local/bin/par2 -V)"; then
 	git clone https://github.com/animetosho/par2cmdline-turbo.git
     if [[ -d "/par2cmdline-turbo/" ]]; then
         echo "**** Installing par2cmdline-turbo ****"
