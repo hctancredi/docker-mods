@@ -33,7 +33,6 @@ apk add --no-cache \
 	openssl \
 	p7zip \
 	unzip \
-	unrar \
 	python3
 echo "Phase 2 - DONE"
 fi
