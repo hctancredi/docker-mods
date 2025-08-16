@@ -7,23 +7,19 @@
 
 echo "*** Removing existing par2cmdline packages ***"
 if apk list --installed -q | grep par2cmdline &> /dev/null; then
-    apk del --purge -q par2cmdline
-fi
-
-# if [[ -e "/usr/local/bin/par2" ]] && grep -q 'par2cmdline-turbo' <<< "$(/usr/local/bin/par2 -V)"; then
+	apk del --purge -q par2cmdline
+    echo "**** Installing par2cmdline-turbo ****"
 	git clone https://github.com/animetosho/par2cmdline-turbo.git
-    if [[ -d "/par2cmdline-turbo/" ]]; then
-        echo "**** Installing par2cmdline-turbo ****"
-		mkdir -p /tmp/par2
-		cd /tmp/par2
-        git clone https://github.com/animetosho/par2cmdline-turbo.git
-		cd par2cmdline-turbo
-		aclocal
-		automake --add-missing
-		autoconf
-		./configure
-		make
-		make install
+	mkdir -p /tmp/par2
+	cd /tmp/par2
+	git clone https://github.com/animetosho/par2cmdline-turbo.git
+	cd par2cmdline-turbo
+	aclocal
+	automake --add-missing
+	autoconf
+	./configure
+	make
+	make install
     else
         echo "**** par2cmdline-turbo already installed or platform unsupported ****"
-	fi
+fi
