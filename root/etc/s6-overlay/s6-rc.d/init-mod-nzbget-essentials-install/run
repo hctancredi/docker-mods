@@ -5,7 +5,7 @@
 # so it can take advantage of packages installed
 # init-mods-end depends on this script so that later init and services wait until this script exits
 
-echo "*** Removing existing par2cmdline packages ***"
+#echo "*** Removing existing par2cmdline packages ***"
 #if [ -f /usr/local/bin/par2 ]; then
 	apk del --purge -q par2cmdline
     echo "**** Installing par2cmdline-turbo ****"
@@ -20,6 +20,8 @@ echo "*** Removing existing par2cmdline packages ***"
 	./configure
 	make
 	make install
+	echo "**** par2cmdline-turbo Installation Finished ****"
+	echo "NZBGet Essentials - Installation Ended"
 #    else
 #        echo "**** par2cmdline-turbo already installed or platform unsupported ****"
 #fi
