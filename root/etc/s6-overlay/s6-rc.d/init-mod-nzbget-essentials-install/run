@@ -6,7 +6,7 @@
 # init-mods-end depends on this script so that later init and services wait until this script exits
 
 echo "*** Removing existing par2cmdline packages ***"
-if apk list --installed -q | grep par2cmdline &> /dev/null; then
+if [ -f /usr/local/bin/par2 ]; then
 	apk del --purge -q par2cmdline
     echo "**** Installing par2cmdline-turbo ****"
 	git clone https://github.com/animetosho/par2cmdline-turbo.git
