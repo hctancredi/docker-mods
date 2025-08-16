@@ -6,7 +6,7 @@
 # init-mods-end depends on this script so that later init and services wait until this script exits
 
 echo "*** Removing existing par2cmdline packages ***"
-if [ -f /usr/local/bin/par2 ]; then
+#if [ -f /usr/local/bin/par2 ]; then
 	apk del --purge -q par2cmdline
     echo "**** Installing par2cmdline-turbo ****"
 	git clone https://github.com/animetosho/par2cmdline-turbo.git
@@ -20,6 +20,6 @@ if [ -f /usr/local/bin/par2 ]; then
 	./configure
 	make
 	make install
-    else
-        echo "**** par2cmdline-turbo already installed or platform unsupported ****"
-fi
+#    else
+#        echo "**** par2cmdline-turbo already installed or platform unsupported ****"
+#fi
